@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="promise.js"></script>
+<script>
+  let AA = new Promise((resolve, reject) => {
+    setTimeout(function () {
+      console.log('start')
+      resolve('AA')
+    }, 1000)
+  })
+  let res = AA.then(v => {
+    console.log(v)
+    return AA
+  }, e => {
+    console.log(e)
+  })
+  console.log(res)
+</script>
+</body>
+</html>
